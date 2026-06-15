@@ -969,8 +969,8 @@ QPair<QString, QString> DSysInfo::distributionOrgWebsite(DSysInfo::OrgType type)
     siGlobal->ensureDistributionInfo();
 #endif
 
-    QString fallbackSiteName = type == Distribution ? QStringLiteral("www.deepin.org") : QString();
-    QString fallbackSiteUrl = type == Distribution ? QStringLiteral("https://www.deepin.org") : QString();
+    QString fallbackSiteName = type == Distribution ? QStringLiteral("lingmo.org") : QString();
+    QString fallbackSiteUrl = type == Distribution ? QStringLiteral("https://lingmo.org") : QString();
 
     return {
         siGlobal->distributionInfo->stringValue("WebsiteName", distributionInfoSectionName(type), fallbackSiteName),
@@ -1013,7 +1013,7 @@ QString DSysInfo::distributionOrgLogo(DSysInfo::OrgType orgType, DSysInfo::LogoT
 }
 
 #if DTK_VERSION < DTK_VERSION_CHECK(6, 0, 0, 0)
-QString DSysInfo::deepinDistributorLogo(DSysInfo::LogoType type, const QString &fallback)
+QString DSysInfo::lingmoDefaultLogo(DSysInfo::LogoType type, const QString &fallback)
 {
     return distributionOrgLogo(Distributor, type, fallback);
 }

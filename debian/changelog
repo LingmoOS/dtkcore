@@ -1,3 +1,12 @@
+dtkcore (6.7.40.lingmo.1) unstable; urgency=medium
+
+  * Release 6.7.40.lingmo.1
+  * rename deepinDistributorLogo to lingmoDefaultLogo
+  * replace Deepin branding references with Lingmo equivalents
+  * update default website information from deepin.org to lingmo.org
+
+ --  Lingmo OS Team <team@lingmo.org>  Tue, 16 Jun 2026 00:52:00 +0800
+
 dtkcore (6.7.38) unstable; urgency=medium
 
   * Release 6.7.38

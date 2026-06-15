@@ -163,7 +163,7 @@ public:
     Q_DECL_DEPRECATED_X("Use distributionInfoPath() instead") static QString deepinDistributionInfoPath();
     Q_DECL_DEPRECATED_X("Use distributionOrgName() instead") static QString deepinDistributorName();
     Q_DECL_DEPRECATED_X("Use distributionOrgWebsite() instead") static QPair<QString, QString> deepinDistributorWebsite();
-    Q_DECL_DEPRECATED_X("Use distributionOrgLogo() instead") static QString deepinDistributorLogo(LogoType type = Normal, const QString & fallback = QString());
+    Q_DECL_DEPRECATED_X("Use distributionOrgLogo() instead") static QString lingmoDefaultLogo(LogoType type = Normal, const QString & fallback = QString());
 #endif
     static QString distributionInfoPath();
     static QString distributionInfoSectionName(OrgType type);
