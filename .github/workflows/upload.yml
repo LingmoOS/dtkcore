@@ -34,8 +34,9 @@ jobs:
       
       - name: Collect files
         run: |
-          mkdir -p src-tar-output
-          mv ../*.dsc ../*.tar.* src-tar-output/
+          mkdir -p source-output
+          mv ../*.dsc ../*.tar.* source-output/
+          cp rpm/* source-output/
 
       - name: Upload
         uses: LingmoOS/action-upload-to-obs@0.0.4
@@ -46,4 +47,4 @@ jobs:
           obs-user-name: ${{ secrets.OBS_USERNAME }}
           obs-password: ${{ secrets.OBS_TOKEN }}
           obs-instance-url: 'https://api.opensuse.org'
-          local-package-dir: './src-tar-output'
+          local-package-dir: './source-output'

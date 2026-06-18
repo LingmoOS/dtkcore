@@ -909,10 +909,13 @@ QString DSysInfo::deepinDistributionInfoPath()
 QString DSysInfo::distributionInfoPath()
 {
 #ifdef Q_OS_LINUX
-    // return "/usr/share/deepin/distribution.info";
-    return QStandardPaths::locate(QStandardPaths::GenericDataLocation, "deepin/distribution.info");
+    QString path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "lingmo/distribution.info");
+    // if (path.isEmpty()) {
+    //     path = QStandardPaths::locate(QStandardPaths::GenericDataLocation, "lingmo/distribution.info");
+    // }
+    return path;
 #else
-    return QDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)).filePath("deepin-distribution.info");
+    return QDir(QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation)).filePath("lingmo-distribution.info");
 #endif // Q_OS_LINUX
 }
 
@@ -944,7 +947,7 @@ QString DSysInfo::distributionOrgName(DSysInfo::OrgType type, const QLocale &loc
     siGlobal->ensureDistributionInfo();
 #endif
 
-    QString fallback = type == Distribution ? QStringLiteral("Deepin") : QString();
+    QString fallback = type == Distribution ? QStringLiteral("Lingmo OS") : QString();
 
     return siGlobal->distributionInfo->localizedValue("Name", locale, distributionInfoSectionName(type), fallback);
 }

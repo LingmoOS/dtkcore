@@ -5,9 +5,9 @@ Summary:        Deepin tool kit core modules
 License:        LGPLv3+
 URL:            https://github.com/linuxdeepin/dtkcore
 %if 0%{?fedora}
-Source0:        %{url}/archive/%{version}/%{name}-%{version}.tar.gz
+Source0:        dtkcore-%{version}.tar.gz
 %else
-Source0:        %{name}-%{version}.orig.tar.xz
+Source0:        dtkcore-%{version}.tar.gz
 %endif
 BuildRequires:  dtkcommon-devel
 BuildRequires:  gcc-c++
