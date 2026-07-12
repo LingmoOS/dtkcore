@@ -21,7 +21,7 @@ class DExportedInterfacePrivate;
 class DExportedInterfaceDBusInterface : public QObject, protected QDBusContext
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "com.deepin.ExportedInterface")
+    Q_CLASSINFO("D-Bus Interface", "com.lingmo.ExportedInterface")
 
 public:
     DExportedInterfaceDBusInterface(DExportedInterfacePrivate *priv);

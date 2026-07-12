@@ -14,7 +14,7 @@ class ut_DExportedInterface : public testing::Test
 {
 public:
     static void SetUpTestSuite() {
-        QDBusConnection::sessionBus().registerService("org.deepin.ExpIntfTest");
+        QDBusConnection::sessionBus().registerService("org.lingmo.ExpIntfTest");
         _infc = new DUtil::DExportedInterface;
         _infc->registerAction("quit", "quit the application", [](QString)->QVariant {
             qDebug() << "quit? No Way!";
@@ -27,7 +27,7 @@ public:
         });
     }
     static void TearDownTestSuite() {
-        QDBusConnection::sessionBus().unregisterService("org.deepin.ExpIntfTest");
+        QDBusConnection::sessionBus().unregisterService("org.lingmo.ExpIntfTest");
         delete _infc;
     }
 
@@ -38,9 +38,9 @@ DUtil::DExportedInterface *ut_DExportedInterface::_infc = nullptr;
 
 TEST_F(ut_DExportedInterface, list)
 {
-    auto caller = DDBusSender().service("org.deepin.ExpIntfTest")
+    auto caller = DDBusSender().service("org.lingmo.ExpIntfTest")
             .path("/")
-            .interface("com.deepin.ExportedInterface")
+            .interface("com.lingmo.ExportedInterface")
             .method("list");
 
     auto msg = caller.call();
@@ -53,9 +53,9 @@ TEST_F(ut_DExportedInterface, list)
 
 TEST_F(ut_DExportedInterface, help)
 {
-    auto caller = DDBusSender().service("org.deepin.ExpIntfTest")
+    auto caller = DDBusSender().service("org.lingmo.ExpIntfTest")
             .path("/")
-            .interface("com.deepin.ExportedInterface")
+            .interface("com.lingmo.ExportedInterface")
             .method("help")
             .arg(QString("quit"));
 
@@ -69,9 +69,9 @@ TEST_F(ut_DExportedInterface, help)
 
 TEST_F(ut_DExportedInterface, invoke)
 {
-    auto caller = DDBusSender().service("org.deepin.ExpIntfTest")
+    auto caller = DDBusSender().service("org.lingmo.ExpIntfTest")
             .path("/")
-            .interface("com.deepin.ExportedInterface")
+            .interface("com.lingmo.ExportedInterface")
             .method("invoke")
             .arg(QString("answer"))
             .arg(QString("balabala"));
@@ -83,9 +83,9 @@ TEST_F(ut_DExportedInterface, invoke)
 
     EXPECT_EQ(reply.value(), 42);
 
-    caller = DDBusSender().service("org.deepin.ExpIntfTest")
+    caller = DDBusSender().service("org.lingmo.ExpIntfTest")
                 .path("/")
-                .interface("com.deepin.ExportedInterface")
+                .interface("com.lingmo.ExportedInterface")
                 .method("invoke")
                 .arg(QString("unkownAction")) // invoke an unregistered action
                 .arg(QString("balabala"));

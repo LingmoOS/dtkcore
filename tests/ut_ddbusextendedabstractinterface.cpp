@@ -15,7 +15,7 @@ class DBusExtendedInterfaceFoo : public DDBusExtendedAbstractInterface {
     Q_OBJECT
 public:
     static inline const char *staticInterfaceName()
-        { return "org.deepin.FakeDBusService"; }
+        { return "org.lingmo.FakeDBusService"; }
 
     explicit DBusExtendedInterfaceFoo(QObject *parent = nullptr)
         : DDBusExtendedAbstractInterface(FakeDBusService::get_service(),

@@ -28,7 +28,7 @@ private:
 class FakeDBusService : public QObject
 {
     Q_OBJECT
-    Q_CLASSINFO("D-Bus Interface", "org.deepin.FakeDBusService")
+    Q_CLASSINFO("D-Bus Interface", "org.lingmo.FakeDBusService")
 public:
     explicit FakeDBusService(QObject *parent = nullptr);
     ~FakeDBusService();
@@ -36,9 +36,9 @@ public:
     Q_PROPERTY(QString strProperty READ strproperty WRITE setStrproperty)
     Q_PROPERTY(QList<QDBusObjectPath> objectPaths READ objectpaths)
 
-    static QString get_service() { return "org.deepin.FakeDBusService"; }
-    static QString get_path() { return "/org/deepin/FakeDBusService"; }
-    static QString get_interface() { return "org.deepin.FakeDBusService"; }
+    static QString get_service() { return "org.lingmo.FakeDBusService"; }
+    static QString get_path() { return "/org/lingmo/FakeDBusService"; }
+    static QString get_interface() { return "org.lingmo.FakeDBusService"; }
 
 public Q_SLOTS:
     inline QString strproperty() { return m_strproperty; }
@@ -51,8 +51,8 @@ public Q_SLOTS:
     Q_SCRIPTABLE QString foo() { return QString("bar"); }
 
 private:
-    const QString m_service{"org.deepin.FakeDBusService"};
-    const QString m_path{"/org/deepin/FakeDBusService"};
+    const QString m_service{"org.lingmo.FakeDBusService"};
+    const QString m_path{"/org/lingmo/FakeDBusService"};
     void registerService();
     void unregisterService();
 

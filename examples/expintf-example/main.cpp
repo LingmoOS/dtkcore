@@ -30,7 +30,7 @@ class CustomInterface : public DUtil::DExportedInterface
 int main(int argc, char **argv)
 {
     QCoreApplication app(argc, argv);
-    QDBusConnection::sessionBus().registerService("com.deepin.ExpIntfTest");
+    QDBusConnection::sessionBus().registerService("com.lingmo.ExpIntfTest");
 
 #ifndef ALTERNATE_USAGE
     DUtil::DExportedInterface *ei = new DUtil::DExportedInterface();
